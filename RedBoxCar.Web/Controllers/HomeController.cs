@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using RedBoxCar.Web.Models;
+using RedBoxCar.Web.DatabaseModels;
 using System.Diagnostics;
 
 namespace RedBoxCar.Web.Controllers

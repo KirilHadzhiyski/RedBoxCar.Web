@@ -1,24 +1,25 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
-
-namespace RedBoxCar.Web.Models
+namespace RedBoxCar.Web.DatabaseModels
 {
+    [Table("Orders")]
     public class Orders
     {
-        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
-        [Required]
+        [Required(ErrorMessage ="Delivery Time is Required")]
+
         public int DeliveryTimeInMinutes { get; set; }
 
         public string Details { get; set; }
 
-        [ForeignKey("Products")]
+      
         public int ProductsListId { get; set; }
 
         public List<Products> ProductsList { get; set; }
        
-        [Required]
+        [Required(ErrorMessage ="Creation Time is Required")]
         public  DateTime CreationTime { get; set; }
     }
 }

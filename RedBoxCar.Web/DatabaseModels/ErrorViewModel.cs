@@ -1,4 +1,4 @@
-namespace RedBoxCar.Web.Models
+namespace RedBoxCar.Web.DatabaseModels
 {
     public class ErrorViewModel
     {

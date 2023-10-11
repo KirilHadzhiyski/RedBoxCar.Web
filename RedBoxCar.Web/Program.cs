@@ -6,6 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+var conString = "Server=(localdb)\\mssqllocaldb;Database=aspnet-RedBoxCar.Web-695d96aa-bbf2-47b5-9f0d-b0ac24fc3a55;Trusted_Connection=True;MultipleActiveResultSets=true;";
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();

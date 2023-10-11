@@ -1,26 +1,26 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
-namespace RedBoxCar.Web.Models
+namespace RedBoxCar.Web.DatabaseModels
 {
+    [Table("Products")]
     public class Products
     {
-        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         
-        [Required]
+        [Required(ErrorMessage = "Name is Required")]
         public string Name { get; set; }
        
-        [Required]
+        [Required(ErrorMessage = "Details is Required")]
         public string Details { get; set; }
         
-        [Required]
+        [Required(ErrorMessage = "Image is Required")]
         public string Image { get; set; }
 
         public int Rating { get; set; }
         
-        [Required]
+        [Required(ErrorMessage ="Preparatoin Time is Required")]
         public int PreparationTimeInMinutes { get; set; }
-        [ForeignKey("Ingredients")]
         
         public int IngredientsListId { get; set; }
         
